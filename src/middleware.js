@@ -2,6 +2,9 @@ import { SupabaseClient } from "@supabase/supabase-js";
 import { nanoid } from 'nanoid';
 import { NextResponse } from "next/server";
 
+console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
+console.log("SUPABASE_KEY:", process.env.SUPABASE_KEY);
+
 const supabase = new SupabaseClient(
     process.env.SUPABASE_URL,
     process.env.SUPABASE_KEY
