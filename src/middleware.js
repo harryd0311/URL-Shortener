@@ -2,13 +2,13 @@ import { SupabaseClient } from "@supabase/supabase-js";
 import { nanoid } from 'nanoid';
 import { NextResponse } from "next/server";
 
-console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
-console.log("SUPABASE_KEY:", process.env.SUPABASE_KEY);
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 
-const supabase = new SupabaseClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_KEY
-);
+console.log("SUPABASE_URL:", supabaseUrl);
+console.log("SUPABASE_KEY:", supabaseKey);
+
+const supabase = new SupabaseClient(supabaseUrl, supabaseKey);
 
 function getValidURL(url){
     if(url.includes('http://') || url.includes('https://')){
