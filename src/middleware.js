@@ -1,8 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
+import { SupabaseClient } from "@supabase/supabase-js";
 import { nanoid } from 'nanoid';
 import { NextResponse } from "next/server";
 
-const supabase = createClient(
+const supabase = SupabaseClient(
     process.env.SUPABASE_URL,
     process.env.SUPABASE_KEY
 );
